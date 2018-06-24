@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "6406747464",
+    "firebase_url": "https://ilead-2ef3d.firebaseio.com",
+    "project_id": "ilead-2ef3d",
+    "storage_bucket": "ilead-2ef3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6406747464:android:6540615ae4e06887",
+        "android_client_info": {
+          "package_name": "com.talmerey.missleading"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6406747464-pkrfuqb8sj7kjfpbqutpojqelllko3qv.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "6406747464-pkrfuqb8sj7kjfpbqutpojqelllko3qv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAafdGIyqwBAsnourgjdCfkMsU5LZ-9c3k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
