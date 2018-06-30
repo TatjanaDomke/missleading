@@ -18,6 +18,10 @@
         </activity>
         <activity android:name=".LoginActivity" >
         </activity>
+        <activity android:name=".ProfileActivity" >
+            android:name=".activities.FullViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
+        </activity>
         <activity android:name=".CreateAccountActivity" >
         </activity>
         <activity android:name=".ForgotPasswordActivity" >

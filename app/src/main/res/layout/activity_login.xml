@@ -5,14 +5,16 @@
 
     <EditText
         android:id="@+id/et_email"
-        style="@style/viewCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/etEmail"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/et_password"
-        style="@style/viewCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/et_email"
         android:ems="10"
         android:hint="@string/etPassword"
@@ -20,16 +22,18 @@
 
     <Button
         android:id="@+id/btn_login"
-        style="@style/viewCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/et_password"
-        android:background="@color/colorAccent"
+        android:background="@color/WhiteSmoke"
         android:text="@string/login_title"
-        android:textColor="@android:color/white"
+        android:textColor="@color/HotPink"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_forgot_password"
-        style="@style/viewCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/btn_login"
         android:clickable="true"
         android:gravity="center_horizontal"
@@ -38,11 +42,12 @@
 
     <Button
         android:id="@+id/btn_register_account"
-        style="@style/viewCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorAccent"
+        android:background="@color/WhiteSmoke"
         android:text="@string/create_act"
-        android:textColor="@android:color/white"
+        android:textColor="@color/HotPink"
         android:textStyle="bold" />
 
 </RelativeLayout>

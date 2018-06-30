@@ -4,9 +4,14 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.content.Intent
+import android.opengl.Visibility
+import android.support.design.widget.BottomNavigationView
+import android.support.v4.app.Fragment
+import android.support.v7.app.ActionBar
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.talmerey.missleading.R.id.toolbar
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,10 +25,16 @@ class MainActivity : AppCompatActivity() {
     private var firstName: String? = null
     private var lastName: String? = null
     private var txtWelcomeMessage: TextView? = null
+    lateinit var toolbar: ActionBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        toolbar = supportActionBar!!
+        val bottomNavigation: BottomNavigationView = findViewById(R.id.navigationView)
+
+        bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
     fun onLoginButtonClicked(view:View) {
@@ -69,6 +80,38 @@ class MainActivity : AppCompatActivity() {
                     })
                 }
             }
+    }
+
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.navigation_tasks -> {
+                toolbar.title = "Tasks"
+                val tasksFragment = TasksFragment.newInstance()
+                openFragment(tasksFragment)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_team -> {
+               toolbar.title = "Team"
+                val teamFragment = TeamFragment.newInstance()
+                openFragment(teamFragment)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_skills -> {
+                toolbar.title = "Skills"
+                val skillsFragment = SkillsFragment.newInstance()
+                openFragment(skillsFragment)
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        txtWelcomeMessage!!.visibility = View.GONE
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.container, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
 
